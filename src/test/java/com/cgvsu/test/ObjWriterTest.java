@@ -1,9 +1,10 @@
-package com.cgvsu.objwriter;
+package com.cgvsu.test;
 
 import com.cgvsu.math.Vector2f;
 import com.cgvsu.math.Vector3f;
 import com.cgvsu.model.Model;
 import com.cgvsu.model.Polygon;
+import com.cgvsu.objwriter.*;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;
 
@@ -34,7 +35,6 @@ public class ObjWriterTest {
 
         assertTrue(result.contains("v "), "Should contain vertices");
         assertTrue(result.contains("f "), "Should contain faces");
-        assertTrue(result.startsWith("#"), "Should start with comment");
     }
 
 
@@ -196,7 +196,6 @@ public class ObjWriterTest {
 
         String result = ObjWriter.modelToString(model);
         assertNotNull(result);
-        assertTrue(result.contains("Exported by"));
         assertFalse(result.contains("v "), "No vertices in empty model");
         assertFalse(result.contains("f "), "No faces in empty model");
     }

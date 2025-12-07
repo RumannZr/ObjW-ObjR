@@ -44,7 +44,7 @@ public class ObjReader {
 		return result;
 	}
 
-	protected static Vector3f parseVertex(final ArrayList<String> wordsInLineWithoutToken, int lineInd) {
+	public static Vector3f parseVertex(final ArrayList<String> wordsInLineWithoutToken, int lineInd) {
 		try {
 			return new Vector3f(
 					Float.parseFloat(wordsInLineWithoutToken.get(0)),

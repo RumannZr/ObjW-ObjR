@@ -130,7 +130,7 @@ public class ObjWriter {
         return sb.toString();
     }
 
-    protected static String formatFloatCompact(float value) {
+    public static String formatFloatCompact(float value) {
         if (Float.isNaN(value)) {
             throw new ObjWriterException("Cannot format NaN value");
         }

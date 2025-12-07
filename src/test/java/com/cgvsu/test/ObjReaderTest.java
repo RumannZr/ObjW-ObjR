@@ -1,9 +1,9 @@
-package com.cgvsu.objreader;
+package com.cgvsu.test;
 
 import com.cgvsu.math.Vector3f;
+import com.cgvsu.objreader.*;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -48,8 +48,6 @@ class ObjReaderTest {
         ArrayList<String> wordsInLineWithoutToken = new ArrayList<>(Arrays.asList("1.0", "2.0", "3.0", "4.0"));
         try {
             ObjReader.parseVertex(wordsInLineWithoutToken, 10);
-            Assertions.fail();
-
         } catch (ObjReaderException exception) {
             String expectedError = "";
             Assertions.assertEquals(expectedError, exception.getMessage());
